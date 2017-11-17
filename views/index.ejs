@@ -1,1 +1,56 @@
-Hi all
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Vollkorn+SC" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="invitation">
+      <div class="envelope"></div>
+      <div class="letter"></div>
+      <div class="seal"></div>
+      <div class="open">
+        <div class="card-container">
+          <div class="card">
+            <div class="front"></div>
+            <div class="back"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bigLetter__Holder">
+      <div class="bigLetter">
+        <h1>Приглашение</h1>
+        <p>Дорогой друг,</p>
+        <p>Аня и Марат рады пригласить тебя на новоселье! Приходи в субботу 18 ноября в 19:00 по адресу ул. Текучева 141, кв. 34. </p>
+        <div style="display:flex" >
+          <p>
+            Войди через Вконтакте, чтобы мы знали что ты пойдёшь.
+          </p>
+          <div>
+            <script type="text/javascript" src="//vk.com/js/api/openapi.js?150"></script>
+            <script type="text/javascript">
+              VK.init({apiId: 5524585});
+            </script>
+
+            <!-- VK Widget -->
+            <div id="vk_auth"></div>
+            <script type="text/javascript">
+              VK.Widgets.Auth("vk_auth", {"authUrl":"/done"});
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-3.2.1.min.js"><\/script>')</script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
