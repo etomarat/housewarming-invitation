@@ -1,0 +1,16 @@
+{
+  "name": "housewarming-invitation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:etomarat/housewarming-invitation.git",
+  "author": "Marat Azizov <etomarat@gmail.com>",
+  "license": "GPL",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "request": "^2.83.0",
+    "tape": "^4.8.0"
+  }
+}
