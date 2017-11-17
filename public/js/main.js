@@ -26,7 +26,9 @@ $(function() {
             name: user.fullname
             photo: user.photo
           },
-          onAjaxSuccess
+          function(r) {
+            console.log(r);
+          }
         );
       });
     });
