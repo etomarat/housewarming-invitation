@@ -21,11 +21,11 @@ $(function() {
         }
         $.post(
           '/db',
-          {
+          JSON.stringify({
             id: user.id,
             name: user.fullName,
             photo: user.photo
-          },
+          }),
           function(r) {
             console.log(r);
           }
