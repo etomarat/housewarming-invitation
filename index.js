@@ -11,6 +11,9 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('index'))
   .post('/db', function (request, response) {
+    console.log(request.params);
+    console.log(request.body);
+    console.log(request.query);
     const name = request.param('name')
     const photo = request.param('photo')
     const id = request.param('id')
