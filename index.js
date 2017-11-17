@@ -16,9 +16,9 @@ express()
     console.log(request.params);
     console.log(request.body);
     console.log(request.query);
-    const name = request.param('name')
-    const photo = request.param('photo')
-    const id = request.param('id')
+    const name = request.body.name
+    const photo = request.body.photo
+    const id = request.body.id
     console.log(name, photo, id);
     pg.connect(DATABASE_URL, function(err, client, done) {
       console.log(err);
