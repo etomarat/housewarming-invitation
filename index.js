@@ -7,9 +7,9 @@ const DATABASE_URL = process.env.DATABASE_URL || 'postgres://bwkuqgbvurejdl:8819
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
-  .use(express.json());
-  .use(express.urlencoded());
-  .use(express.multipart());
+  .use(express.json())
+  .use(express.urlencoded())
+  .use(express.multipart())
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('index'))
