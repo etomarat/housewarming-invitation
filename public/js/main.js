@@ -1,6 +1,7 @@
 $(function() {
   $('.invitation').click(function(){
     $(this).addClass('active');
+    $('.bigLetter__Holder').addClass('active');
   });
 
   $('.login').click(function(){

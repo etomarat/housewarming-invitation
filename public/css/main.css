@@ -235,6 +235,12 @@ body {
   position: relative;
   z-index: 1000;
   top: 80px;
+  transform: translateY(-600px);
+  transition: all 600ms ease;
+}
+
+.bigLetter__Holder.active {
+  transform: translateY(0px);
 }
 
 body {
