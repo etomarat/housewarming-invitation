@@ -5,7 +5,30 @@ $(function() {
 
   $('.login').click(function(){
     VK.Auth.login(function(response){
-      console.log(response);
+      const user = {
+        firstName: response.session.user.first_name,
+        lastName: response.session.user.last_name,
+        id: response.session.user.id,
+        fullname: response.session.user.first_name + ' ' + response.session.user.last_name
+      }
+      $('.TextHolder').text('Мы ждем тебя, '+user.firstName+ '!')
+      VK.Api.call('users.get', {
+        user_ids: user.id,
+        fields: ['photo_max']
+      }, function(r) {
+        if(r.response) {
+          user.photo = r.response[0].photo_max
+        }
+        $.post(
+          '/db',
+          {
+            id: user.id
+            name: user.fullname
+            photo: user.photo
+          },
+          onAjaxSuccess
+        );
+      });
     });
   })
 });

@@ -241,3 +241,12 @@ body {
   font-family: 'Caveat', cursive;
   background: #a8e4ff;
 }
+
+.login {
+  color: #bf2010;
+  text-decoration: none;
+  border: 1px dashed #bf2010;
+  border-radius: 4px;
+  padding: 0 8px;
+  margin-left: -8px;
+}
