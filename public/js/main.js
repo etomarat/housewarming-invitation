@@ -9,7 +9,7 @@ $(function() {
         firstName: response.session.user.first_name,
         lastName: response.session.user.last_name,
         id: response.session.user.id,
-        fullname: response.session.user.first_name + ' ' + response.session.user.last_name
+        fullName: response.session.user.first_name + ' ' + response.session.user.last_name
       }
       $('.TextHolder').text('Мы ждем тебя, '+user.firstName+ '!')
       VK.Api.call('users.get', {
@@ -22,8 +22,8 @@ $(function() {
         $.post(
           '/db',
           {
-            id: user.id
-            name: user.fullname
+            id: user.id,
+            name: user.fullName,
             photo: user.photo
           },
           function(r) {
