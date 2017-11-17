@@ -22,7 +22,7 @@ express()
     console.log(name, photo, id);
     pg.connect(DATABASE_URL, function(err, client, done) {
       console.log(err);
-      client.query(`INSERT INTO users VALUES ("${id}", "${name}", "${photo}")`, function(err, result) {
+      client.query(`INSERT INTO users (id, name, photo) VALUES ("${id}", "${name}", "${photo}")`, function(err, result) {
         done();
         if (err)
          { console.error(err); response.send("Error " + err); }
