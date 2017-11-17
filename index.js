@@ -14,7 +14,7 @@ express()
   .get('/', (req, res) => {
     pg.connect(DATABASE_URL, function(err, client, done) {
       console.log(err);
-      client.query('SELECT * FROM users', function(err, result) {
+      client.query('SELECT * FROM users ORDER BY RANDOM()', function(err, result) {
         done();
         if (err)
          { console.error(err); response.send("Error " + err); }
