@@ -9,6 +9,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Caveat|Vollkorn+SC" rel="stylesheet">
     <script src="https://vk.com/js/api/openapi.js?150" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
     <script type="text/javascript">
       VK.init({apiId: 6263391});
     </script>
@@ -16,6 +17,14 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
+    <div class="Users">
+      <div class="Users__Type">Они уже идут:</div>
+      <% results.forEach(function(r) { %>
+        <div class="User">
+          <img src="<%= r.photo %>">
+        </div>
+      <% }); %>
+    </div>
     <div class="invitation">
       <div class="envelope"></div>
       <div class="letter"></div>

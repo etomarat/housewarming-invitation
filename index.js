@@ -11,7 +11,19 @@ express()
   .use(express.urlencoded())
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('index'))
+  .get('/', (req, res) => {
+    pg.connect(DATABASE_URL, function(err, client, done) {
+      console.log(err);
+      client.query('SELECT * FROM users', function(err, result) {
+        done();
+        if (err)
+         { console.error(err); response.send("Error " + err); }
+        else
+         { res.render('index', {results: result.rows})}
+      });
+    });
+
+  })
   .post('/db', function (request, response) {
     console.log(request.params);
     console.log(request.body);
