@@ -1,0 +1,243 @@
+/* Demo */
+
+.main {
+  width:80%;
+  margin: auto;
+}
+
+.card-container, .back, .front {
+  width: 300px;
+  height: 500px;
+}
+
+.card-container {
+  margin: 80px auto 0 auto;
+}
+
+
+/* Core */
+
+.card-container {
+  perspective: 600px; /* 2x .card-container width */
+}
+
+.card {
+  transition: transform .5s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front, .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.front {
+  background-color: green;
+  z-index: 1;
+}
+
+.back {
+  background-color: red;
+  transform: rotateY(180deg);
+}
+
+.card-container:hover .card {
+  transform: rotateY(180deg);
+}
+
+body {
+  background: #333;
+}
+
+.invitation {
+  position: relative;
+  left: 50%;
+  margin-left: -50px;
+  transition: margin-top 0.25s ease-in;
+}
+.invitation:hover, .invitation.active {
+  margin-top: -10px;
+}
+
+.envelope {
+  position: absolute;
+  width: 100px;
+  height: 80px;
+  background: pink;
+  top: 80px;
+  transition: box-shadow 0.25s ease-in;
+}
+.invitation:hover .envelope {
+  box-shadow: -8px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.seal {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transition: all 0.2s 0.1s linear;
+}
+.seal:before, .seal:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  top: 80px;
+}
+.seal:before {
+  border-bottom: 80px solid #F3ABB7;
+  border-right: 100px solid transparent;
+}
+.seal:after {
+  border-bottom: 80px solid #F3B2BD;
+  border-left: 100px solid transparent;
+}
+.invitation:hover .seal, .invitation.active .seal {
+  z-index: 4;
+}
+
+.letter {
+  position: absolute;
+  left: 10px;
+  top: 100px;
+  width: 80px;
+  height: 60px;
+  background: #FFFFD2;
+  transition: all 0.2s 0.1s linear;
+  /* z-index: 3; */
+}
+.invitation:hover .letter, .invitation.active .letter {
+  top: 75px;
+  z-index: 3;
+}
+.letter:before, .letter:after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 40px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.1);
+}
+.letter:after {
+  top: 18px;
+  width: 50px;
+}
+
+.open {
+  position: absolute;
+  z-index: 2;
+}
+.invitation:hover .open .card, .invitation.active .open .card {
+  transform: rotateX(180deg);
+}
+.open .card-container, .open .front, .open .back {
+  width: 0;
+  height: 0;
+}
+.open .card-container {
+  perspective: 100px;
+}
+.open .front, .open .back {
+  background: transparent;
+  width: 0;
+  height: 0;
+}
+.open .front {
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 50px solid #FF8F8F;
+  z-index: 5;
+}
+.open .back {
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 50px solid #C24141;
+  z-index: 2;
+  transform: rotateX(180deg);
+}
+
+.btn {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  left: 50%;
+  top: 50%;
+  margin-left: -40px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  background: #B2344F;
+  border: 0;
+}
+
+body {
+
+}
+
+.invitation {
+  width: 100px;
+}
+
+.invitation.active .letter {
+  top: -100px;
+}
+
+.bigLetter {
+  width: 450px;
+  margin: 0px auto;
+  padding: 10px 20px;
+  background: #fff;
+  position: relative;
+  border-radius: 3px;
+}
+
+.bigLetter:after {
+  content: '';
+  background: -webkit-repeating-linear-gradient(45deg, #114abc, #114abc 10px, #fff 10px, #fff 20px, #bf2010 20px, #bf2010 30px, #fff 30px, #fff 40px);
+  background: repeating-linear-gradient(45deg, #114abc, #114abc 10px, #fff 10px, #fff 20px, #bf2010 20px, #bf2010 30px, #fff 30px, #fff 40px);
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 1px 2px 6px 1px rgba(76, 66, 47, 0.75);
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  z-index: -1;
+}
+
+.bigLetter h1 {
+  display: inline-block;
+  margin: 15px 0 10px -28px;
+  padding: 10px 15px 5px 30px;
+  background: #bf2010;
+  border-width: 1px 1px 1px 0px;
+  border-style: dashed;
+  color: #fff;
+  box-shadow: 2px 0 0 2px #bf2010, 2px 2px 0 2px #bf2010, 2px -2px 0 2px #bf2010, inset 0 0 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.bigLetter h1 {
+  font-size: 2.5rem;
+  font-family: 'Vollkorn SC', serif;
+}
+
+.bigLetter p {
+  font-size: 1.75rem;
+  line-height: 140%;
+  margin: 20px 0;
+}
+
+.bigLetter__Holder {
+  position: relative;
+  z-index: 1000;
+  top: 80px;
+}
+
+body {
+  font-family: 'Caveat', cursive;
+  background: #a8e4ff;
+}
